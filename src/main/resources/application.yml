@@ -6,11 +6,14 @@ server:
 #    root: debug
 spring:
   datasource:
-    #url: jdbc:mysql://52.77.251.94:3306/test??serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&characterSetResults=utf8&useSSL=false&verifyServerCertificate=false&autoReconnct=true&autoReconnectForPools=true&allowMultiQueries=true
-    url: jdbc:mysql://52.77.251.94:3306/test
-    username: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://52.77.251.94:3306/test
+#    username: root
+#    password: 123456
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:oracle:thin:@(DESCRIPTION=(FAILOVER=on)(LOAD_BALANCE=off)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=bagana.novo.dk)(PORT=16030))(ADDRESS=(PROTOCOL=TCP)(HOST=groppo.novo.dk)(PORT=16030)))(CONNECT_DATA=(SERVICE_NAME=pems8v_rw.novo.dk)))
+    username: pemsreadonly
+    password: readonly_PEMS_8V
+    driver-class-name: oracle.jdbc.driver.OracleDriver
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
     maxActive: 20

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example;
 
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;
@@ -9,22 +9,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
-class DemoApplicationTests {
+class SearchDBTest {
 
 //	@Autowired
 //	DataSource dataSource;
 
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	GetQueryResult getQueryResult;
+
+	@Test
+	void makeTest(){
+		getQueryResult.splitResultsByWorkbooks();
+//		getQueryResult.splitResultsBySheets();
+	}
 
 	@Test
 	void contextLoads() throws SQLException {
@@ -33,5 +39,7 @@ class DemoApplicationTests {
 //		System.out.println(connection);
 //		connection.close();
 
+
 	}
+
 }
